@@ -12,29 +12,33 @@ class MenueViewController: UIViewController {
 
     @IBOutlet weak var menueSelector: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var totalSumButton: UIBarButtonItem!
     
     var dishes: [Dish] = []
 
-
+    var totalSum = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.reloadData()
         
         dishes = createArray()
         menueSelector.setTitle("Основные Блюда", forSegmentAt: 0)
         menueSelector.setTitle("Салаты", forSegmentAt: 1)
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .white
         navigationItem.title = "Меню"
         
-      /*  menueSelector.setTitle("Основные Блюда", forSegmentAt: 0)
-        menueSelector.setTitle("Салаты", forSegmentAt: 1)
-        menueSelector.setTitle("Напитки", forSegmentAt: 2)
-        */
-        
     }
     
+    @IBAction func filterDish(_ sender: UISegmentedControl) {
+        let filterWords = ["Основные Блюда", "Салаты"]
+        dishes = createArray().filter { (dish) -> Bool in
+            dish.type.contains(filterWords[(sender as AnyObject).selectedSegmentIndex])
+        }
+        tableView.reloadData()
+    }
     
     func createArray() -> [Dish] {
         
@@ -52,8 +56,8 @@ class MenueViewController: UIViewController {
         
         return tempDishes
     }
-
 }
+
 extension MenueViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dishes.count
@@ -68,5 +72,13 @@ extension MenueViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DishProfileViewController") as? DishProfileViewController else { return }
+        let dish = dishes[indexPath.row]
+        vc.dishImage.image = dish.image
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
