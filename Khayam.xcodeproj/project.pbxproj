@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BEC0F69D2469BD4B006CFEC3 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0F69C2469BD4B006CFEC3 /* OrderViewController.swift */; };
 		BEC8B60F246AC1250020F6CC /* DishProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8B60E246AC1250020F6CC /* DishProfileViewController.swift */; };
+		BEC8B613246AFE800020F6CC /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8B612246AFE800020F6CC /* SaleViewController.swift */; };
 		BEDDF70224531E5E00895077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDF70124531E5E00895077 /* AppDelegate.swift */; };
 		BEDDF70424531E5E00895077 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDF70324531E5E00895077 /* SceneDelegate.swift */; };
 		BEDDF70624531E5E00895077 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDF70524531E5E00895077 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		BEC0F69C2469BD4B006CFEC3 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		BEC8B60E246AC1250020F6CC /* DishProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishProfileViewController.swift; sourceTree = "<group>"; };
+		BEC8B612246AFE800020F6CC /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		BEDDF6FE24531E5E00895077 /* Khayam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Khayam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEDDF70124531E5E00895077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEDDF70324531E5E00895077 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				BEDDF71B2453287900895077 /* Dishes.swift */,
 				BEC8B60E246AC1250020F6CC /* DishProfileViewController.swift */,
 				BEDDF7172453214F00895077 /* MenueVIewController.swift */,
+				BEC8B612246AFE800020F6CC /* SaleViewController.swift */,
 				BEC0F69C2469BD4B006CFEC3 /* OrderViewController.swift */,
 				BEDDF70324531E5E00895077 /* SceneDelegate.swift */,
 				BEDDF70A24531E6100895077 /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 				BEDDF7182453214F00895077 /* MenueVIewController.swift in Sources */,
 				BEC8B60F246AC1250020F6CC /* DishProfileViewController.swift in Sources */,
 				BEDDF70224531E5E00895077 /* AppDelegate.swift in Sources */,
+				BEC8B613246AFE800020F6CC /* SaleViewController.swift in Sources */,
 				BEC0F69D2469BD4B006CFEC3 /* OrderViewController.swift in Sources */,
 				BEDDF71A2453267400895077 /* MenueCell.swift in Sources */,
 				BEDDF70424531E5E00895077 /* SceneDelegate.swift in Sources */,

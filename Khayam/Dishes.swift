@@ -15,11 +15,13 @@ class Dish {
     var title: String
     var price: Int
     var type: String
+    var dishStruct: String
     
-    init (image: UIImage, title: String, price: Int, type: String) {
+    init (image: UIImage, title: String, price: Int, type: String, dishStruct: String) {
         self.image = image
         self.title = title
         self.price = price
         self.type  = type
+        self.dishStruct = dishStruct
     }
 }

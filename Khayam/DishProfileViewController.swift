@@ -10,16 +10,18 @@ import UIKit
 
 class DishProfileViewController: UIViewController {
     
-    @IBOutlet weak var dishDescription: UITextView!
+    @IBOutlet weak var dishName: UILabel!
     @IBOutlet weak var dishImage: UIImageView!
+    @IBOutlet weak var dishDescription: UITextView!
     
-    var dish:Dish?
-    
+    var image = UIImage()
+    var dishStruct = ""
+    var name = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dishImage.image = dish?.image
-        
+        dishDescription.text = dishStruct
+        dishImage.image = image
+        dishName.text = name
     }
     
 }

@@ -14,9 +14,9 @@ class MenueViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var dishes: [Dish] = []
+    let menuePhoto = ["plovKebabShafran", "plovKebabShafran", "plovKebabSultani", "1000iland", "dolma", "gorme", "pide", "rubin", "baloniessa", "carbonara"]
 
     var totalSum = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
@@ -44,15 +44,29 @@ class MenueViewController: UIViewController {
         
         var tempDishes: [Dish] = []
         
-        let dish1 = Dish(image: UIImage.init(named: "plovKebab")!, title: "Плов Кебаб", price: 169, type: "Основные Блюда")
-        let dish2 = Dish(image: UIImage.init(named: "plovKebabShafran")!, title: "Плов Кебаб Шафран", price: 169, type: "Основные Блюда")
-        let dish3 = Dish(image: UIImage.init(named: "plovKebabSultani")!, title: "Плов Кебаб Султани", price: 169, type: "Основные Блюда")
-        let dish4 = Dish(image: UIImage.init(named: "1000iland")!, title: "1000 Островов", price: 132, type: "Салаты")
+        let dish1 = Dish(image: UIImage.init(named: menuePhoto[0])!, title: "Плов Кебаб", price: 169, type: "Основные Блюда", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish2 = Dish(image: UIImage.init(named: menuePhoto[1])!, title: "Плов Кебаб Шафран", price: 169, type: "Основные Блюда", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish3 = Dish(image: UIImage.init(named: menuePhoto[2])!, title: "Плов Кебаб Султани", price: 169, type: "Основные Блюда", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish4 = Dish(image: UIImage.init(named: menuePhoto[3])!, title: "1000 Островов", price: 132, type: "Салаты", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish5 = Dish(image: UIImage.init(named: menuePhoto[4])!, title: "Долма Королевская", price: 99, type: "Основные Блюда", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish6 = Dish(image: UIImage.init(named: menuePhoto[5])!, title: "Плов Горме Сабзи", price: 129, type: "Основные Блюда", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish7 = Dish(image: UIImage.init(named: menuePhoto[6])!, title: "Пиде", price: 129, type: "Основные Блюда", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish8 = Dish(image: UIImage.init(named: menuePhoto[7])!, title: "Салат Рубин", price: 119, type: "Салаты", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish9 = Dish(image: UIImage.init(named: menuePhoto[8])!, title: "Паста Балоньеза", price: 119, type: "Основные Блюда", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+        let dish10 = Dish(image: UIImage.init(named: menuePhoto[9])!, title: "Паста Карбонара", price: 129, type: "Основные Блюда", dishStruct: "Очень вкусно, нужно обязательно попробовать")
+
 
         tempDishes.append(dish1)
         tempDishes.append(dish2)
         tempDishes.append(dish3)
         tempDishes.append(dish4)
+        tempDishes.append(dish5)
+        tempDishes.append(dish6)
+        tempDishes.append(dish7)
+        tempDishes.append(dish8)
+        tempDishes.append(dish9)
+        tempDishes.append(dish10)
+
         
         return tempDishes
     }
@@ -74,11 +88,14 @@ extension MenueViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DishProfileViewController") as? DishProfileViewController else { return }
+        let sb = UIStoryboard(name: "Main", bundle: nil)
         let dish = dishes[indexPath.row]
-        vc.dishImage.image = dish.image
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let vc = sb.instantiateViewController(withIdentifier: "DishProfileViewController") as? DishProfileViewController else { return }
+        vc.image = dish.image
+        vc.dishStruct = dish.dishStruct
+        vc.name = dish.title
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
